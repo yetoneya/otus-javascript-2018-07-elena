@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>TODO sum</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>           
+           function sum(num) {
+              var res;
+              var wel=function(num){                
+                  if(typeof num === 'undefined'){
+                      if(typeof res === 'undefined'){
+                          return 0;
+                              } else {
+                                  return res;
+                              }
+                          }
+                  else if(typeof num === 'number'){       
+                     if(typeof res === 'undefined'){
+                         res = num;
+                     }
+                     else{ res+=num;}
+                     return wel;
+                 }
+            }          
+            return wel(num);
+        }
+        </script>
+    </head>
+    <body>
+        <script>
+        //sum(1)();
+        //sum(3)();
+       // sum(8)();
+        var s=sum(3)(4)(9)(10)(); 
+        alert(s);
+        </script>              
+    </body>
+</html>
