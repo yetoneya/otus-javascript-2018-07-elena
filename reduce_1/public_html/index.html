@@ -20,18 +20,28 @@
 
 
             async function promiseReduce(asyncFunctions, reducer, initialValue) {
-                var fns = asyncFunctions.map(function (fn) {
-                    return fn();
-                });
-                var result = [];
-                for (x = 0; x < fns.length; x++) {
-                    var res = await fns[x];
-                    result[x] = res;
-                    console.log(res);
+                var result=[];
+                for(x=0;x<asyncFunctions.length;x++){
+                    var res=await asyncFunctions[x]();
+                    result[x]=res;
+                    alert(res);
                 }
-                //alert(result.reduce( reducer, initialValue));
-                return result.reduce(reducer, initialValue);
-            }
+                return result.reduce(reducer,initialValue);
+        //      var fns = asyncFunctions.map(function (fn) {
+        //      return fn();
+        //      });
+        //      var result = [];
+        //      for (x = 0; x < fns.length; x++) {
+        //          var res = await fns[x];
+        //          result[x] = res;
+        //          console.log(res);
+        //      }
+
+        //      return result.reduce(reducer, initialValue);
+
+        //      return Promise.all(fns).then(values => 
+        //      values.reduce(reducer,initialValue));
+    }
 
             promiseReduce(
                     [fn1, fn2],
