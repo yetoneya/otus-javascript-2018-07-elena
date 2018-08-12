@@ -21,7 +21,7 @@
 
             async function promiseReduce(asyncFunctions, reducer, initialValue) {
                 var result=[];
-                for(x=0;x<asyncFunctions.length;x++){
+                for(var x=0;x<asyncFunctions.length;x++){
                     var res=await asyncFunctions[x]();
                     result[x]=res;
                 }
