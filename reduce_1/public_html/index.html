@@ -22,7 +22,12 @@
             async function promiseReduce(asyncFunctions, reducer, initialValue) {
                 var result=[];
                 for(var x=0;x<asyncFunctions.length;x++){
-                    var res=await asyncFunctions[x]();
+                    try {
+                        var res=await asyncFunctions[x]();
+                    }catch(error) {
+                        alert(error);
+                        
+                    }
                     if(typeof res !=='number')continue;
                     result[x]=res;
                 }
