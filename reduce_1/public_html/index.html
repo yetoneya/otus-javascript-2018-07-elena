@@ -23,6 +23,7 @@
                 var result=[];
                 for(var x=0;x<asyncFunctions.length;x++){
                     var res=await asyncFunctions[x]();
+                    if(typeof res !=='number')continue;
                     result[x]=res;
                 }
                 return result.reduce(reducer,initialValue);
@@ -39,7 +40,8 @@
                     },
                     2
                     )
-                    .then(console.log);
+                    .then(console.log)
+                    .catch (exception=>{alert(exception);}); 
         </script>
     </body>
 </html>
