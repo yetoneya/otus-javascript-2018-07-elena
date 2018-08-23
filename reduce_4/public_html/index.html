@@ -1,0 +1,47 @@
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var fn1 = () => {
+                console.log('fn1');
+                return Promise.resolve(3);
+            };
+
+            var fn2 = () => new Promise(resolve => {
+                    console.log('fn2');
+                    setTimeout(() => resolve(4), 1000);
+                });
+
+            function promiseReduce(asyncFunctions, reducer, initialValue) {
+                let chain = Promise.resolve();
+                let result = initialValue;
+                asyncFunctions.forEach(function (fn) {
+                    chain = chain
+                            .then(() => fn())
+                            .then((res) => {
+                                result = reducer(result, res);
+                            })
+                });
+                return chain.then(() => result);
+            }
+
+            promiseReduce(
+                    [fn1, fn2],
+                    function (memo, value) {
+                        console.log('reduce')
+                        return memo * value
+                    },
+                    2
+                    )
+                    .then(console.log)
+                    .catch(exception => {
+                        alert(exception);
+                    });
+        </script>
+    </body>
+</html>
