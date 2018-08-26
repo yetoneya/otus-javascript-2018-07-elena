@@ -1,0 +1,17 @@
+{
+  "name": "tree",
+  "version": "1.0.0",
+  "main": "main.js",
+  "dependencies": {
+    
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node main.js",
+    "tree": "node main.js",
+    "test": "node main.js animals"   
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
