@@ -1,0 +1,6 @@
+{
+  "name": "read-transform", "version": "1.0.0", "main": "main.js", "dependencies": {
+    
+  }, "devDependencies": {}, "scripts": {
+    "start": "node main.js"}, "author": "", "license": "ISC", "description": ""
+}
