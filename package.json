@@ -1,0 +1,7 @@
+{
+    "name": "rss-mongo", "version": "1.0.0", "keywords": [
+        "util", "functional", "server", "client", "browser"
+    ], "author": "Lena", "contributors": [], "dependencies": {
+        "express": "^4.16.3", "mongoose": "^5.2.17", "rss-parser": "^3.4.3", "body-parser": "1.18.3"
+    }
+}
